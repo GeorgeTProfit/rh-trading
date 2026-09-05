@@ -1,0 +1,58 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.so
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Virtualenvs
+.venv/
+venv/
+env/
+
+# Secrets
+.env
+.env.*
+secrets/
+rh-keys/
+
+# Runtime state and evidence (vault owns these)
+data/evidence_report.json
+data/evidence_runner_state.json
+data/desk_state.json
+data/wallet_db.json
+data/seen_fills.json
+data/signal_queue.json*
+data/trade_log.jsonl
+data/test_artifact_log.jsonl
+data/pulse_cache.json
+data/*.lock
+data/*.inflight.json
+data/weth_robinhood_swaps.jsonl
+data/trenches_copy_baseline_7d.json
+
+# Live trade artifacts (vault owns these)
+positions.json
+trade_log.jsonl
+risk_state.json
+HALT_TRADING
+
+# Logs
+*.log
+*.log.*
+logs/
+
+# Editor / OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*~
+
+# Temporary backups
+*.bak
+*.tmp
