@@ -1,0 +1,84 @@
+name: Evidence Campaign
+
+on:
+  schedule:
+    # Every 5 minutes — batch 5 cycles per run for ~60s effective resolution
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+    inputs:
+      cycles:
+        description: "Number of desk cycles to run"
+        default: "5"
+        required: false
+      interval:
+        description: "Seconds between cycles"
+        default: "60"
+        required: false
+
+env:
+  PYTHON_VERSION: "3.12"
+  RH_RPC_URL: "https://rpc.mainnet.chain.robinhood.com"
+
+jobs:
+  evidence:
+    runs-on: ubuntu-latest
+    # Free tier limit: ~1,000 min/month for public repos
+    # This runs ~288 times/month at ~3 min each = ~865 min/month
+    # Switch to a longer interval if you hit the free tier cap
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repo with evidence state
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0  # need history for git pull
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install web3 eth-account eth-abi requests
+
+      - name: Create runtime directories
+        run: |
+          mkdir -p 03-Tooling/5-agent-desk/data
+          mkdir -p 03-Tooling/5-agent-desk/logs
+
+      - name: Run paper desk cycles
+        env:
+          RH_PRIVATE_KEY: ${{ secrets.RH_PRIVATE_KEY }}
+        run: |
+          cd 03-Tooling/5-agent-desk
+          CYCLES="${{ inputs.cycles || 5 }}"
+          INTERVAL="${{ inputs.interval || 60 }}"
+          echo "Running $CYCLES paper-only desk cycles every ${INTERVAL}s..."
+          python3 evidence_runner.py \
+            --cycles "$CYCLES" \
+            --interval "$INTERVAL" \
+            --report data/evidence_report.json \
+            --logfile logs/evidence_runner.out
+
+      - name: Commit updated evidence state
+        run: |
+          git config user.name "rh-trading-bot"
+          git config user.email "bot@rh-trading.local"
+          git add -A 03-Tooling/5-agent-desk/data/
+          if git diff --cached --quiet; then
+            echo "No evidence changes to commit"
+          else
+            git commit -m "Auto-update evidence report [skip ci]"
+            git pull --rebase origin main
+            git push origin main
+          fi
+
+      - name: Upload logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: evidence-logs
+          path: 03-Tooling/5-agent-desk/logs/
