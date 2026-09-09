@@ -3,6 +3,8 @@ concurrency:
   group: evidence
   cancel-in-progress: true
 
+permissions:
+  contents: write
 
 on:
   schedule:
