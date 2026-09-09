@@ -1,4 +1,8 @@
 name: Evidence Campaign
+concurrency:
+  group: evidence
+  cancel-in-progress: true
+
 
 on:
   schedule:
