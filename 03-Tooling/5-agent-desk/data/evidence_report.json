@@ -1,0 +1,29 @@
+{
+  "campaign": {
+    "start_ts": 0
+  },
+  "events_since_start": 14,
+  "paper_entries": 0,
+  "paper_exits": 0,
+  "pipeline_candidates": 0,
+  "promotion": {
+    "ready": false,
+    "reasons": [
+      "insufficient_observations",
+      "nonpositive_clustered_lower_bound"
+    ]
+  },
+  "route_preflight_failures": 0,
+  "summary": {
+    "expectancy_lower_bound_eth": 0.0,
+    "independent_clusters": 0,
+    "losses": 0,
+    "net_expectancy_eth": 0.0,
+    "observations": 0,
+    "sellability_verified_observations": 0,
+    "total_net_pnl_eth": 0,
+    "unsellable_outcomes": 0,
+    "win_rate": 0.0,
+    "wins": 0
+  }
+}
