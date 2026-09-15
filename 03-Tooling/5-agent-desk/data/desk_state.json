@@ -1,21 +1,21 @@
 {
   "scout": {
-    "last_cycle_ts": 1789497413.03459,
-    "signals_found": 1,
-    "cycle_ms": 708,
-    "queue_depth": 1,
+    "last_cycle_ts": 1789508776.846074,
+    "signals_found": 0,
+    "cycle_ms": 710,
+    "queue_depth": 0,
     "watched_wallets": 8
   },
   "desk": {
-    "cycle_ts": 1789497412.3264055,
+    "cycle_ts": 1789508776.1351702,
     "wallet_count": 8,
-    "scout_signals": 1,
-    "pipeline_run": 1,
+    "scout_signals": 0,
+    "pipeline_run": 0,
     "trades_executed": 0,
     "paper_positions_opened": 0,
     "exits_triggered": 0,
-    "latency_ms": 1307,
-    "status": "ok",
-    "last_cycle_ts": 1789497413.6340578
+    "latency_ms": 0,
+    "status": "idle",
+    "last_cycle_ts": 1789508776.8539634
   }
 }
