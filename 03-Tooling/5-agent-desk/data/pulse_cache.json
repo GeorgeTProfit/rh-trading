@@ -1,23 +1,24 @@
 {
-  "cached_at": 1789713304.9602046,
+  "cached_at": 1789773337.3315535,
   "cached_result": {
     "go_signal": 0.0,
     "phase": "red",
-    "btc_price": 77482.0,
+    "btc_price": 81127.0,
     "btc_change_1h_pct": 0.0,
-    "btc_change_24h_pct": 1.41,
+    "btc_change_24h_pct": 6.14,
     "funding_rate": null,
-    "btc_dominance_pct": 58.0876510712318,
+    "btc_dominance_pct": 58.39158427467221,
     "gas_gwei": null,
     "data_quality_ok": false,
     "warnings": [
       "macro_data_unavailable"
     ],
     "reasons": [
-      "BTC=$77,482",
-      "btc_dominance=58.1%"
+      "BTC=$81,127",
+      "btc_up_24h=6.1%",
+      "btc_dominance=58.4%"
     ],
-    "pulse_latency_ms": 507,
-    "cached_at": 1789713304.9602025
+    "pulse_latency_ms": 367,
+    "cached_at": 1789773337.331552
   }
 }
