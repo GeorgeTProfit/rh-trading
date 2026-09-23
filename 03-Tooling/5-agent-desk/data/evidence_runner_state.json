@@ -2,16 +2,16 @@
   "cycle_index": 5,
   "cycles_requested": 5,
   "last_cycle_result": {
-    "cycle_ts": 1790114787.1603055,
+    "cycle_ts": 1790122974.2353303,
     "exits_triggered": 0,
-    "latency_ms": 0,
+    "latency_ms": 1143,
     "paper_positions_opened": 0,
-    "pipeline_run": 0,
-    "scout_signals": 0,
+    "pipeline_run": 1,
+    "scout_signals": 1,
     "trades_executed": 0,
     "wallet_count": 8
   },
-  "last_cycle_started_ts": 1790114787.1602993,
+  "last_cycle_started_ts": 1790122974.2353253,
   "last_error": null,
   "paper_only": true,
   "report_path": "data/evidence_report.json"
