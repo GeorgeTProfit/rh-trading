@@ -2,7 +2,7 @@
   "cycle_index": 5,
   "cycles_requested": 5,
   "last_cycle_result": {
-    "cycle_ts": 1790294329.4257128,
+    "cycle_ts": 1790304133.7740703,
     "exits_triggered": 0,
     "latency_ms": 0,
     "paper_positions_opened": 0,
@@ -11,7 +11,7 @@
     "trades_executed": 0,
     "wallet_count": 8
   },
-  "last_cycle_started_ts": 1790294329.4256735,
+  "last_cycle_started_ts": 1790304133.7740655,
   "last_error": null,
   "paper_only": true,
   "report_path": "data/evidence_report.json"
