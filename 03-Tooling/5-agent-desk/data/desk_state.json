@@ -1,13 +1,13 @@
 {
   "scout": {
-    "last_cycle_ts": 1795311803.0653358,
+    "last_cycle_ts": 1795337565.3610368,
     "signals_found": 0,
-    "cycle_ms": 780,
+    "cycle_ms": 450,
     "queue_depth": 0,
     "watched_wallets": 8
   },
   "desk": {
-    "cycle_ts": 1795311802.2839596,
+    "cycle_ts": 1795337564.9099188,
     "wallet_count": 8,
     "scout_signals": 0,
     "pipeline_run": 0,
@@ -16,6 +16,6 @@
     "exits_triggered": 0,
     "latency_ms": 0,
     "status": "idle",
-    "last_cycle_ts": 1795311803.0680373
+    "last_cycle_ts": 1795337565.3649392
   }
 }
